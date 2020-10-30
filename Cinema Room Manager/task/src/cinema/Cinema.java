@@ -16,8 +16,45 @@ public class Cinema {
                 array[i][j] = "S";
             }
         }
-        printArray(array, seatsInRow);
+        //printArray(array, seatsInRow);
+        int itemsMenu = -1;
+        while (true) {
+            System.out.println();
+            System.out.println("1. Show the seats");
+            System.out.println("2. Buy a ticket");
+            System.out.println("0. Exit");
+            System.out.println();
+            itemsMenu = scanner.nextInt();
+            switch (itemsMenu) {
+                case 1: {
+                    printArray(array, seatsInRow);
+                    break;
+                }
+                case 2: {
+                    buyTicket(array, rows, seatsInRow);
+                    break;
+                }
+                case 0: {
+                    return;
+                }
+            }
+        }
 
+       /* int allSeats = rowNumber * seatNumber;
+        int total = 0;
+        if (allSeats < 60) {
+            total = allSeats * 10;
+        } else {
+            int expensive = rowNumber / 2;
+            int cheaper = rowNumber - expensive;
+            total = expensive * seatNumber * 10 + cheaper * seatNumber * 8;
+        }
+        System.out.println("Total income:");
+        System.out.println("$" + total);*/
+    }
+
+    public static void buyTicket(String[][] array, int rows, int seatsInRow) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a row number:");
         int rowNumber = scanner.nextInt();
         System.out.println("Enter a seat number in that row:");
@@ -38,19 +75,7 @@ public class Cinema {
         }
         System.out.println();
         array[rowNumber][seatNumber] = "B";
-        printArray(array, seatsInRow);
-
-       /* int allSeats = rowNumber * seatNumber;
-        int total = 0;
-        if (allSeats < 60) {
-            total = allSeats * 10;
-        } else {
-            int expensive = rowNumber / 2;
-            int cheaper = rowNumber - expensive;
-            total = expensive * seatNumber * 10 + cheaper * seatNumber * 8;
-        }
-        System.out.println("Total income:");
-        System.out.println("$" + total);*/
+        //printArray(array, seatsInRow);
     }
 
     public static void printArray(String[][] array, int seatsInRow) {
