@@ -11,3 +11,4 @@ content:
 - Calculator with four methods
 - Adding values
 - Avoid division by zero
+- Return empty string when argument is null
