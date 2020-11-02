@@ -15,3 +15,5 @@ content:
 - Avoid NPE
 - Out of bounds_ (1)
 - Fill the matrix by numbers
+- Sum array elements greater than a value
+- Sum of neighbors
